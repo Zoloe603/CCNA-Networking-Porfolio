@@ -34,8 +34,11 @@ The network consists of one managed switch, a router and four PCs. Two PCs belon
 | Device | VLAN | IP Address | Subnet Mask |
 
 | PC1 | Sales (10) | 192.168.10.11 | 255.255.255.0 |
+
 | PC2 | Sales (10) | 192.168.10.12 | 255.255.255.0 |
+
 | PC3 | IT (20) | 192.168.20.11 | 255.255.255.0 |
+
 | PC4 | IT (20) | 192.168.20.12 | 255.255.255.0 |
 
 Default gateways are not configured because this initial lab does not include a router.
