@@ -23,14 +23,16 @@ This project demonstrates basic switch configuration, VLAN segmentation, IPv4 ad
 
 ## 3. Network Topology
 
-[
+<img width="632" height="413" alt="image" src="https://github.com/user-attachments/assets/69524974-ceb3-4e72-b957-8646d67b7316" />
+
+
 **Topology description:**  
-The network consists of one managed switch and four PCs. Two PCs belong to Sales (VLAN 10), while the other two belong to IT (VLAN 20).
+The network consists of one managed switch, a router and four PCs. Two PCs belong to Sales (VLAN 10), while the other two belong to IT (VLAN 20).
 
 ## 4. IP Addressing Plan
 
 | Device | VLAN | IP Address | Subnet Mask |
-|---|---|---|---|
+
 | PC1 | Sales (10) | 192.168.10.11 | 255.255.255.0 |
 | PC2 | Sales (10) | 192.168.10.12 | 255.255.255.0 |
 | PC3 | IT (20) | 192.168.20.11 | 255.255.255.0 |
@@ -47,16 +49,7 @@ Default gateways are not configured because this initial lab does not include a 
 SW1(config-if)#switchport access vlan 10
 
 ### Switch Port Assignment
-
-
-### Verification
-
-
-
-
-
-
-
+<img width="725" height="244" alt="image" src="https://github.com/user-attachments/assets/a0d3e208-9188-44c5-a071-fcfcbc982841" />
 
 ## 6. Testing and Results
 
@@ -68,12 +61,13 @@ Default gateways are not configured because this initial lab does not include a 
 
 
 PC1 pings PC2 : Success
-
+<img width="532" height="341" alt="image" src="https://github.com/user-attachments/assets/472c4330-25a2-4011-b16a-285126c01b62" />
 
 PC3 Pings PC4 : Success
+<img width="544" height="377" alt="image" src="https://github.com/user-attachments/assets/555e8944-0723-4dc8-96c7-ad8fc598c4b9" />
 
 PC1 pings PC3 : Failure
-
+<img width="569" height="315" alt="image" src="https://github.com/user-attachments/assets/97eea779-e165-4c13-99e6-b7bc8232181c" />
 
 ## 7. Troubleshooting
 
@@ -81,13 +75,15 @@ PC1 pings PC3 : Failure
 [PC1 cannot ping PC 3]
 
 **Diagnosis:**  
-[PC1 fails to send traffic to PC3 as it is outside its network and there is no router to send the defult gateway]
+[PC1 fails to send traffic to PC3 as it is outside its network and there is no router to send the default gateway]
 
 **Solution:**  
-[1.Added router and configure ip address of 192.168.20.254/30 on interface g0/0]
-[2.
-[3.Configured the defult gateway for each PCs]
-[4.VLAN 10 and VLAN 20 can now communicate through the defult gateway]
+[1. Added ROAS(Router On A Stick) and configure ip address of 192.168.20.254/30 on interface g0/0]
+[2. Configured the defult gateway for each PCs]
+[3. VLAN 10 and VLAN 20 can now communicate through the default gateway]
+[4. PC1 can now ping PC2]
+<img width="536" height="345" alt="image" src="https://github.com/user-attachments/assets/bc06c4b3-91b5-430c-a085-f26baa4ad486" />
+
 
 ## 8. Key Learnings
 
@@ -95,6 +91,7 @@ PC1 pings PC3 : Failure
 - Learned how to assign switch access ports to VLANs.
 - Learned how VLANs separate Layer 2 broadcast domains.
 - Practised verifying configurations and testing connectivity.
+- Learned how to create ROAS(Router On A Stick) to connect different VLANs
 
 ## 9. Project Files
 
